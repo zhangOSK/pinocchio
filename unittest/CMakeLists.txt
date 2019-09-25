@@ -57,7 +57,12 @@ ADD_PINOCCHIO_UNIT_TEST(kinematics eigen3)
 IF(URDFDOM_FOUND)
   ADD_PINOCCHIO_UNIT_TEST(urdf "eigen3;urdfdom")
   ADD_TEST_CFLAGS(urdf '-DPINOCCHIO_SOURCE_DIR=\\\"${${PROJECT_NAME}_SOURCE_DIR}\\\"')
-
+#--------------------------------------------------
+  ADD_PINOCCHIO_UNIT_TEST(IK_arm "eigen3;urdfdom")
+  ADD_TEST_CFLAGS(IK_arm '-DPINOCCHIO_SOURCE_DIR=\\\"${${PROJECT_NAME}_SOURCE_DIR}\\\"')
+  ADD_PINOCCHIO_UNIT_TEST(force_testRNEA "eigen3;urdfdom")
+  ADD_TEST_CFLAGS(force_testRNEA '-DPINOCCHIO_SOURCE_DIR=\\\"${${PROJECT_NAME}_SOURCE_DIR}\\\"')
+#--------------------------------------------------
   ADD_PINOCCHIO_UNIT_TEST(value "eigen3;urdfdom")
   ADD_TEST_CFLAGS(value '-DPINOCCHIO_SOURCE_DIR=\\\"${${PROJECT_NAME}_SOURCE_DIR}\\\"')
   IF(HPP_FCL_FOUND)
